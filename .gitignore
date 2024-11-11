@@ -1,0 +1,4 @@
+demo-file-reading/*
+!demo-file-reading/src/
+!demo-file-reading/pom.xml
+!demo-file-reading/target/
