@@ -15,39 +15,8 @@ public class Main {
         return new String(Files.readAllBytes(Paths.get(fileName)));
     }
 
-    
+    public static void getEven(String url) {
 
-    public static void main(String[] args) {
-        String pathToFile = "/home/drux/Java/project/demo-file-reading/data/";
-        File file = new File(pathToFile + "dataset_91033.txt");
-        
-        //var scanner = new Scanner(new URL("http://www.google.com").openStream(), "UTF-8");
-
-        try(Scanner scanner = new Scanner(file)) {
-            int total = 0;
-            while (scanner.hasNext()) {
-                total += Integer.parseInt(scanner.nextLine());
-            }
-            System.out.println(total);
-
-            String[] nums = new String(Files.readAllBytes(Paths.get(pathToFile + "dataset_91007.txt"))).split(" ");
-            int greater = Integer.parseInt(nums[0]);
-
-            for (int i = 1; i < nums.length; i++) {
-                if (Integer.parseInt(nums[i]) > greater) {
-                    greater = Integer.parseInt(nums[i]);
-                }
-            }
-
-            System.out.println(greater);
-
-        }catch(FileNotFoundException e) {
-            System.out.println("There is no file on the specified location: " + pathToFile);
-        } catch (IOException e) {
-            System.out.println("There is no file on the specified location: " + pathToFile);
-        }
-
-        String url = "https://stepik.org/media/attachments/lesson/91065/dataset_91065.txt";
         int nb_even = 0;
         try {
             var scan = new Scanner(new URL(url).openStream(), "UTF-8");
@@ -64,11 +33,58 @@ public class Main {
             scan.close();
 
         } catch(FileNotFoundException e) {
-            System.out.println("There is no file on the specified location: " + pathToFile);
+            System.out.println("There is no file on the specified location: " + url);
         } catch (MalformedURLException e) {
             System.out.println("The provided URL is not correct: " + url);
         } catch (IOException e) {
             System.out.println("There might be a problem with the URL: " + url);
         }
+    }
+
+    public static void getGreater(String filename) {
+
+        try{
+            String[] nums = readFileAsString(filename).split(" ");
+            int greater = Integer.parseInt(nums[0]);
+
+            for (int i = 1; i < nums.length; i++) {
+                if (Integer.parseInt(nums[i]) > greater) {
+                    greater = Integer.parseInt(nums[i]);
+                }
+            }
+            System.out.println(greater);
+
+        }catch(FileNotFoundException e) {
+            System.out.println("There is no file on the specified location: " + filename);
+        } catch (IOException e) {
+            System.out.println("There is no file on the specified location: " + filename);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        String pathToFile = "/home/drux/Java/project/demo-file-reading/data/";
+        File file = new File(pathToFile + "dataset_91033.txt");
+        String numbersPath = pathToFile + "dataset_91007.txt";
+        //var scanner = new Scanner(new URL("http://www.google.com").openStream(), "UTF-8");
+
+        try(Scanner scanner = new Scanner(file)) {
+            int total = 0;
+            while (scanner.hasNext()) {
+                total += Integer.parseInt(scanner.nextLine());
+            }
+            System.out.println(total);
+
+        }catch(FileNotFoundException e) {
+            System.out.println("There is no file on the specified location: " + pathToFile);
+        }
+
+        //Get the greater number
+        //in the file
+        getGreater(numbersPath);
+
+        //get only the even numbers
+        String url = "https://stepik.org/media/attachments/lesson/91065/dataset_91065.txt";
+        getEven(url);
     }
 }
