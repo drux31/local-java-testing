@@ -58,7 +58,7 @@ public class FileReaders {
         } catch (MalformedURLException e) {
             System.out.println("The provided URL is not correct: " + url);
         } catch (IOException e) {
-            System.out.println("There might be a problem with the URL: " + url);
+            System.out.printf("There might be a problem with the URL: " + url + "\nException content: %s\n", e.getMessage());
         }
     }
 

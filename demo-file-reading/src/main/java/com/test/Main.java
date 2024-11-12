@@ -17,8 +17,8 @@ public class Main {
         FileWriters fileWriters = new FileWriters();
 
         String pathToFile = "/home/drux/Java/project/demo-file-reading/data/";
-        String file = pathToFile + "helloFile.txt";
+        String file = pathToFile + "printwriter.txt";
 
-        fileWriters.helloFile(file);        
+        fileWriters.helloPrintwriter(file);        
     }
 }
