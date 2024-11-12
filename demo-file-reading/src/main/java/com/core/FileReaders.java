@@ -17,6 +17,25 @@ public class FileReaders {
         return new String(Files.readAllBytes(Paths.get(fileName)));
     }
 
+    public String getCOntent(String filePath) throws IOException{
+        return readFileAsString(filePath);
+    }
+
+    public void sumContent(String filePath) {
+
+        File file = new File(filePath);        
+        try(Scanner scanner = new Scanner(file)) {
+            int total = 0;
+            while (scanner.hasNext()) {
+                total += Integer.parseInt(scanner.nextLine());
+            }
+            System.out.println(total);
+
+        }catch(FileNotFoundException e) {
+            System.out.println("There is no file on the specified location: " + filePath);
+        }
+    }
+
     public void getEven(String url) {
 
         int nb_even = 0;
