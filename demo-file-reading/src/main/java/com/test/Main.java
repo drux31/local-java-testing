@@ -1,20 +1,23 @@
 package com.test;
 
-import com.commons.ComputerStaticFactory;
-import com.core.Computer;
-import com.core.Laptop;
-import com.core.PC;
+import com.core.MessageSender;
+import com.startegypattern.EmailSendingMethod;
+import com.startegypattern.SmsSendingMethod;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-    Computer pc = ComputerStaticFactory.newInstance("PC");
-    System.out.println(pc instanceof PC);
+        MessageSender sender = new MessageSender(); // create a message sender
 
-    Computer laptop = ComputerStaticFactory.newInstance("Laptop");
-    System.out.println(laptop instanceof Laptop);
-        
+        sender.setMethod(new EmailSendingMethod()); // set a concrete sending method
+
+        sender.send("alice@gmail.com", "bob@gmail.com", "Hello!");
+
+        sender.setMethod(new SmsSendingMethod()); // set another sending method
+
+        sender.send("1-541-444-3333", "1-541-555-2222", "Hello!");
+            
     }
 }
