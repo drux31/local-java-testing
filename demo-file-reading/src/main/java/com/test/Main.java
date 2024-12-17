@@ -20,8 +20,10 @@ public class Main {
         ListToLinkedList ll = new ListToLinkedList();
         ll.changeList();
         */
-        List<String> list = Arrays.asList("Ajeet", "Steve", "Rick", "Becky", "Mohan", "Zarra", "Thmas", "Majid");
-        BubbleSort bubbleSort = new BubbleSort(list);
+        String dataDir = "/home/drux/IdeaProjects/Phone Book with Java/Phone Book with Java/data";
+        String directory = dataDir + "/small_directory.txt" ;
+        
+        BubbleSort bubbleSort = new BubbleSort(directory);
         bubbleSort.bubbleSort();
     }
 }
