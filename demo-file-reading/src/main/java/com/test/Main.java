@@ -1,5 +1,7 @@
 package com.test;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -52,6 +54,12 @@ public class Main {
 
         double dval = 2;
         //System.out.println(toString(dval));
+
+        BigDecimal number = new BigDecimal("2.001");
+        number = number.add(BigDecimal.ONE);
+        number = number.negate();
+        number.setScale(1, RoundingMode.HALF_DOWN);
+        System.out.println(number);
     }
 
     
