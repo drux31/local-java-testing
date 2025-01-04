@@ -35,4 +35,13 @@ public class ListOperations {
         System.out.println(arrayList);
     }
 
+    public void mergeLists(LinkedList<String> linkedList, ArrayList<String> arrayList) {
+        // write your code here
+        for (String str: arrayList) {
+            linkedList.addLast(str);
+        }
+        System.out.printf("The new size of LinkedList is %d\n", linkedList.size());
+        System.out.println(linkedList);
+    }
+
 }

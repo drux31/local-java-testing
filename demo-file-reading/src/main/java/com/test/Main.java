@@ -56,6 +56,7 @@ public class Main {
         linkedList.add("f");
 
         listOp.removeTheSame(linkedList, arrayList);
+        listOp.mergeLists(linkedList, arrayList);
 
     }
 
