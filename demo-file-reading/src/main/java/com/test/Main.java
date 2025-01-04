@@ -2,10 +2,13 @@ package com.test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.commons.ListOperations;
 import com.templatePatern.Programmer;
 import com.templatePatern.Worker;
 import com.testfiles.BubbleSort;
@@ -33,33 +36,27 @@ public class Main {
         //int n = 99;
         //printNextInteger(n);
         //System.out.println(pow(1.5, 10));
-        System.out.println(comb(3, 2));
+        
+        ListOperations listOp = new ListOperations();
+        ArrayList<String> arrayList = new ArrayList<>();
+        LinkedList<String> linkedList = new LinkedList<>();
 
-        int[] arr = {1, 128, 127, 129};
-        for (int a:arr) {
-            System.out.println(a + " " + test(a));
-        }
+        arrayList.add("a");
+        arrayList.add("b");
+        arrayList.add("c");
+        arrayList.add("d");
+        arrayList.add("e");
+        arrayList.add("f");
 
-        float fval = 2F;
-        //System.out.println(toString(fval));
+        linkedList.add("a");
+        linkedList.add("1");
+        linkedList.add("2");
+        linkedList.add("3");
+        linkedList.add("4");
+        linkedList.add("f");
 
-        long lval = 2L;
-        System.out.println(toString(lval));
+        listOp.removeTheSame(linkedList, arrayList);
 
-        byte bval = 2;
-        System.out.println(toString(bval));
-
-        char cval = 2;
-        System.out.println(toString(cval));
-
-        double dval = 2;
-        //System.out.println(toString(dval));
-
-        BigDecimal number = new BigDecimal("2.001");
-        number = number.add(BigDecimal.ONE);
-        number = number.negate();
-        number.setScale(1, RoundingMode.HALF_DOWN);
-        System.out.println(number);
     }
 
     
