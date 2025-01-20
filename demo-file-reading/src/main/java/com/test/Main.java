@@ -4,11 +4,16 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.commons.A;
+import com.commons.BlackBox;
 import com.commons.ListOperations;
+import com.commons.Students;
+import com.core.SomeClass;
 import com.templatePatern.Programmer;
 import com.templatePatern.Worker;
 import com.testfiles.BubbleSort;
@@ -36,27 +41,20 @@ public class Main {
         //int n = 99;
         //printNextInteger(n);
         //System.out.println(pow(1.5, 10));
-        
-        ListOperations listOp = new ListOperations();
-        ArrayList<String> arrayList = new ArrayList<>();
-        LinkedList<String> linkedList = new LinkedList<>();
+        /*
+        HashMap<Students, String> map = new HashMap<>();
+        map.put(new Students("1234"), "John Doe");
+        map.put(new Students("1234"), "Jane Doe");
+    
+        System.out.println(map.size());
+        System.out.println(map);
+         */
+        A instance1 = new A(100);
+        A instance2 = new A(200);
 
-        arrayList.add("a");
-        arrayList.add("b");
-        arrayList.add("c");
-        arrayList.add("d");
-        arrayList.add("e");
-        arrayList.add("f");
-
-        linkedList.add("a");
-        linkedList.add("1");
-        linkedList.add("2");
-        linkedList.add("3");
-        linkedList.add("4");
-        linkedList.add("f");
-
-        listOp.removeTheSame(linkedList, arrayList);
-        listOp.mergeLists(linkedList, arrayList);
+        System.out.println(instance1.getField());
+        System.out.println(instance2.getField());
+    
 
     }
 
