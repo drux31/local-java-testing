@@ -54,6 +54,16 @@ public class Main {
 
         System.out.println(instance1.getField());
         System.out.println(instance2.getField());
+
+        Thread t = Thread.currentThread(); // main thread
+        System.out.println("Name: " + t.getName());
+        System.out.println("ID: " + t.getId());
+        System.out.println("Alive: " + t.isAlive());
+        System.out.println("Priority: " + t.getPriority());
+        System.out.println("Daemon: " + t.isDaemon());
+
+        t.setName("My-Thread");
+        System.out.println("New name: " + t.getName());
     
 
     }
