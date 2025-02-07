@@ -64,7 +64,7 @@ public class Main {
 
         t.setName("My-Thread");
         System.out.println("New name: " + t.getName());
-    
+        System.out.println(Thread.MAX_PRIORITY + " " + Thread.MIN_PRIORITY + " " + Thread.NORM_PRIORITY);    
 
     }
 
