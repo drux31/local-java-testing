@@ -12,6 +12,7 @@ import java.util.Scanner;
 import com.commons.A;
 import com.commons.BlackBox;
 import com.commons.ListOperations;
+import com.commons.SquareWorkerThread;
 import com.commons.Students;
 import com.core.SomeClass;
 import com.templatePatern.Programmer;
@@ -49,23 +50,14 @@ public class Main {
         System.out.println(map.size());
         System.out.println(map);
          */
-        A instance1 = new A(100);
-        A instance2 = new A(200);
+       Thread worker = new SquareWorkerThread("square-worker");
+       worker.start(); //start a worer   
 
-        System.out.println(instance1.getField());
-        System.out.println(instance2.getField());
-
-        Thread t = Thread.currentThread(); // main thread
-        System.out.println("Name: " + t.getName());
-        System.out.println("ID: " + t.getId());
-        System.out.println("Alive: " + t.isAlive());
-        System.out.println("Priority: " + t.getPriority());
-        System.out.println("Daemon: " + t.isDaemon());
-
-        t.setName("My-Thread");
-        System.out.println("New name: " + t.getName());
-        System.out.println(Thread.MAX_PRIORITY + " " + Thread.MIN_PRIORITY + " " + Thread.NORM_PRIORITY);    
-
+       for (long i = 0; i < 5_555_555_543L; i++) {
+            if (i % 1_000_000_000 == 0) {
+                System.out.println("Hello from the main thread!");
+            }
+        }
     }
 
     
