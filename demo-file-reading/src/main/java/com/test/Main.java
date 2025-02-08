@@ -12,6 +12,8 @@ import java.util.Scanner;
 import com.commons.A;
 import com.commons.BlackBox;
 import com.commons.ListOperations;
+import com.commons.MessageNotifier;
+import com.commons.NumbersThread;
 import com.commons.SquareWorkerThread;
 import com.commons.Students;
 import com.core.SomeClass;
@@ -50,14 +52,9 @@ public class Main {
         System.out.println(map.size());
         System.out.println(map);
          */
-       Thread worker = new SquareWorkerThread("square-worker");
+       Thread worker = new MessageNotifier("Prout", 3);
        worker.start(); //start a worer   
-
-       for (long i = 0; i < 5_555_555_543L; i++) {
-            if (i % 1_000_000_000 == 0) {
-                System.out.println("Hello from the main thread!");
-            }
-        }
+       System.out.println("Hello from the main thread!");
     }
 
     
