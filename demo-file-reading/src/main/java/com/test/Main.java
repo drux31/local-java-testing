@@ -26,35 +26,22 @@ import com.testfiles.Person;
 
 public class Main {
 
+
+    static void fibonacci() {
+        int prev = 0;
+        int current = 1;
+        for (int i = 0; i <= 25; i++) {
+            int swap = prev;
+            prev = current;
+            current += swap;
+            if (i == 19) {
+                System.out.println(current);
+            }
+        }
+    }
+
     public static void main(String[] args) {
-
-        Worker programmer = new Programmer();
-        programmer.work();
-
-        /*
-        ListToLinkedList ll = new ListToLinkedList();
-        ll.changeList();
-        */
-        /*String dataDir = "/home/drux/IdeaProjects/Phone Book with Java/Phone Book with Java/data";
-        String directory = dataDir + "/small_directory.txt" ;
-        
-        BubbleSort bubbleSort = new BubbleSort(directory);
-        bubbleSort.bubbleSort();
-        */
-        //int n = 99;
-        //printNextInteger(n);
-        //System.out.println(pow(1.5, 10));
-        /*
-        HashMap<Students, String> map = new HashMap<>();
-        map.put(new Students("1234"), "John Doe");
-        map.put(new Students("1234"), "Jane Doe");
-    
-        System.out.println(map.size());
-        System.out.println(map);
-         */
-       Thread worker = new MessageNotifier("Prout", 3);
-       worker.start(); //start a worer   
-       System.out.println("Hello from the main thread!");
+        fibonacci();
     }
 
     
