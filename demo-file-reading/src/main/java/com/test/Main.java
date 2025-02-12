@@ -1,7 +1,9 @@
 package com.test;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -42,18 +44,13 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        try {
-            FileInputStream fis = new FileInputStream("file.txt");
-            byte[] arr = new byte[3];
-            fis.read(arr); 
-            for(byte b : arr) { 
-                System.out.print((char) b); 
-            }
-            fis.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        // start coding here
+        String text = reader.readLine();
+        
+        System.out.println(new StringBuilder(text).reverse());
+        reader.close();
     }
 
     
