@@ -1,5 +1,7 @@
 package com.test;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -41,7 +43,17 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        fibonacci();
+        try {
+            FileInputStream fis = new FileInputStream("file.txt");
+            byte[] arr = new byte[3];
+            fis.read(arr); 
+            for(byte b : arr) { 
+                System.out.print((char) b); 
+            }
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     
