@@ -2,8 +2,10 @@ package com.test;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -44,13 +46,18 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        // start coding here
-        String text = reader.readLine();
-        
-        System.out.println(new StringBuilder(text).reverse());
-        reader.close();
+    public static void main(String[] args) throws Exception { 
+                
+        try (Reader reader = new FileReader("file.txt")){
+            //BufferedReader(new InputStreamReader(System.in));
+            // start coding here
+            int input = reader.read();
+           while (input != -1) {
+
+                System.out.print((char)input);
+                input = reader.read();
+           }
+        }
     }
 
     
