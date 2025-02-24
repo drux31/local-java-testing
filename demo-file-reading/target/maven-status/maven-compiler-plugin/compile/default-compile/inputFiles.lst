@@ -1,6 +1,17 @@
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/A.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/BlackBox.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/Calculator.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/ComputerStaticFactory.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/ListOperations.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/MessageNotifier.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/MyThread.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/NumbersThread.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/SquareWorkerThread.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/StringOperator.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/Students.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/TestThread.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/User.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/config/CoolJDBC.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/core/Computer.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/core/FileReaders.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/core/FileWriters.java

@@ -1,19 +1,28 @@
 package com.test;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+
+import org.sqlite.SQLiteDataSource;
 
 import com.commons.A;
 import com.commons.BlackBox;
@@ -22,6 +31,8 @@ import com.commons.MessageNotifier;
 import com.commons.NumbersThread;
 import com.commons.SquareWorkerThread;
 import com.commons.Students;
+import com.config.CoolJDBC;
+import com.commons.MyThread;
 import com.core.SomeClass;
 import com.templatePatern.Programmer;
 import com.templatePatern.Worker;
@@ -47,17 +58,44 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception { 
-                
-        try (Reader reader = new FileReader("file.txt")){
-            //BufferedReader(new InputStreamReader(System.in));
-            // start coding here
-            int input = reader.read();
-           while (input != -1) {
+        
+         try
+        (
+          // create a database connection
+          Connection connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
+          Statement statement = connection.createStatement();
+        )
+        {
+          statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
-                System.out.print((char)input);
-                input = reader.read();
-           }
+          statement.executeUpdate("drop table if exists person");
+          statement.executeUpdate("create table person (id integer, name string)");
+          statement.executeUpdate("insert into person values(1, 'leo')");
+          statement.executeUpdate("insert into person values(2, 'yui')");
+          ResultSet rs = statement.executeQuery("select * from person");
+          while(rs.next())
+          {
+            // read the result set
+            System.out.println("name = " + rs.getString("name"));
+            System.out.println("id = " + rs.getInt("id"));
+          }
         }
+        catch(SQLException e)
+        {
+          // if the error message is "out of memory",
+          // it probably means no database file is found
+          e.printStackTrace(System.err);
+        }
+
+        SQLiteDataSource source = new SQLiteDataSource();
+        source.setUrl("jdbc:sqlite::memory:");
+        try (Connection con = source.getConnection()){
+            System.out.println(con.isValid(5));   
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //System.out.println(new CoolJDBC().isConnectionValid());
     }
 
     
