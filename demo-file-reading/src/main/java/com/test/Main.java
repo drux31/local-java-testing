@@ -1,13 +1,19 @@
 package com.test;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.CharArrayWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.Reader;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Connection;
@@ -43,7 +49,6 @@ import com.testfiles.Person;
 
 public class Main {
 
-
     static void fibonacci() {
         int prev = 0;
         int current = 1;
@@ -58,44 +63,35 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception { 
+        String[] words = {"this", " ", "is", " ", "it"};
+        CharArrayWriter writer = new CharArrayWriter();
+        for (String word: words) {
+            writer.write(word);
+        }
+        char[] charArray = writer.toCharArray();
+        writer.close();
+        System.out.println(Arrays.toString(charArray));
+        //String.join("", words).toCharArray()
         
-         try
-        (
-          // create a database connection
-          Connection connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
-          Statement statement = connection.createStatement();
-        )
-        {
-          statement.setQueryTimeout(30);  // set timeout to 30 sec.
+        int[] message = new int[] {114, 101, 97, 100, 32, 97, 98, 111, 117, 116, 32, 65, 83, 67, 73, 73};
 
-          statement.executeUpdate("drop table if exists person");
-          statement.executeUpdate("create table person (id integer, name string)");
-          statement.executeUpdate("insert into person values(1, 'leo')");
-          statement.executeUpdate("insert into person values(2, 'yui')");
-          ResultSet rs = statement.executeQuery("select * from person");
-          while(rs.next())
-          {
-            // read the result set
-            System.out.println("name = " + rs.getString("name"));
-            System.out.println("id = " + rs.getInt("id"));
-          }
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        for (int code : message) {
+            outputStream.write(code);
         }
-        catch(SQLException e)
-        {
-          // if the error message is "out of memory",
-          // it probably means no database file is found
-          e.printStackTrace(System.err);
+        System.out.println(outputStream.toString());
+
+        File sampleFile = new File("sample.txt");
+        byte[] content = new byte[] {'J', 'a', 'v', 'a'}; 
+
+        try {
+            OutputStream _outputStream = new FileOutputStream(sampleFile, true);
+            _outputStream.write(content);
+            _outputStream.close();
+        } catch (Exception e) {
+            System.out.println("Error!");
         }
 
-        SQLiteDataSource source = new SQLiteDataSource();
-        source.setUrl("jdbc:sqlite::memory:");
-        try (Connection con = source.getConnection()){
-            System.out.println(con.isValid(5));   
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        //System.out.println(new CoolJDBC().isConnectionValid());
     }
 
     
