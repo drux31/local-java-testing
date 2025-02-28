@@ -8,16 +8,8 @@ public class EchoServer
     public static void main(String[] args) {
         try(ServerSocket server = new ServerSocket(PORT)) {
             while(true) {
-                try (
-                    Socket socket = server.accept();
-                    DataInputStream input = new DataInputStream(socket.getInputStream());
-                    DataOutputStream output = new DataOutputStream(socket.getOutputStream())
-                ) {
-                    for (int i = 0; i < 5; i++) {
-                        String msg = input.readUTF(); // read the next client message
-                        output.writeUTF(msg); // resend it to the client
-                    }
-                }
+                Session session = new Session(server.accept());
+                session.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
