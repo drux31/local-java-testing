@@ -8,8 +8,11 @@ com/test/Main.class
 com/commons/Calculator.class
 com/core/FileWriters.class
 com/core/MessageSender.class
+com/config/Controller.class
 com/commons/ComputerStaticFactory.class
+com/commons/LightOffCommand.class
 com/startegypattern/EmailSendingMethod.class
+com/commons/LightOnCommand.class
 com/core/FileReaders.class
 com/commons/A.class
 com/commons/StringOperator.class
@@ -17,6 +20,7 @@ com/commons/NumbersThread.class
 com/commons/SquareWorkerThread.class
 com/testfiles/ListToLinkedList.class
 com/startegypattern/SendingMethod.class
+com/commons/Command.class
 com/commons/TestThread.class
 com/testfiles/Person.class
 com/core/Computer.class
@@ -26,5 +30,6 @@ com/core/SomeClass.class
 com/templatePatern/Programmer.class
 com/core/PC.class
 com/commons/ListOperations.class
+com/commons/Light.class
 com/testfiles/BubbleSort.class
 com/commons/User.class

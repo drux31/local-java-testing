@@ -1,7 +1,11 @@
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/A.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/BlackBox.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/Calculator.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/Command.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/ComputerStaticFactory.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/Light.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/LightOffCommand.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/commons/LightOnCommand.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/ListOperations.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/MessageNotifier.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/MyThread.java
@@ -11,6 +15,7 @@
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/Students.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/TestThread.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/commons/User.java
+/home/drux/Java/project/demo-file-reading/src/main/java/com/config/Controller.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/config/CoolJDBC.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/core/Computer.java
 /home/drux/Java/project/demo-file-reading/src/main/java/com/core/FileReaders.java

@@ -32,11 +32,16 @@ import org.sqlite.SQLiteDataSource;
 
 import com.commons.A;
 import com.commons.BlackBox;
+import com.commons.Command;
+import com.commons.Light;
+import com.commons.LightOffCommand;
+import com.commons.LightOnCommand;
 import com.commons.ListOperations;
 import com.commons.MessageNotifier;
 import com.commons.NumbersThread;
 import com.commons.SquareWorkerThread;
 import com.commons.Students;
+import com.config.Controller;
 import com.config.CoolJDBC;
 import com.commons.MyThread;
 import com.core.SomeClass;
@@ -92,6 +97,17 @@ public class Main {
             System.out.println("Error!");
         }
 
+        Controller controller = new Controller();
+        Light light = new Light();
+        
+        Command lightsOn = new LightOnCommand(light);
+        Command lighsOff = new LightOffCommand(light);
+
+        controller.setCommand(lightsOn);
+        controller.executeCommand();
+
+        controller.setCommand(lighsOff);
+        controller.executeCommand();
     }
 
     
