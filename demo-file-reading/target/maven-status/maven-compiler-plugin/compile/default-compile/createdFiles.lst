@@ -9,6 +9,7 @@ com/commons/Calculator.class
 com/core/FileWriters.class
 com/core/MessageSender.class
 com/config/Controller.class
+com/test/Main$BallsColor.class
 com/commons/ComputerStaticFactory.class
 com/commons/LightOffCommand.class
 com/startegypattern/EmailSendingMethod.class
@@ -19,8 +20,11 @@ com/commons/StringOperator.class
 com/commons/NumbersThread.class
 com/commons/SquareWorkerThread.class
 com/testfiles/ListToLinkedList.class
+com/test/Main$Sections.class
 com/startegypattern/SendingMethod.class
 com/commons/Command.class
+com/test/Main$Fonts.class
+com/test/Main$Status.class
 com/commons/TestThread.class
 com/testfiles/Person.class
 com/core/Computer.class

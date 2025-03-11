@@ -23,6 +23,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -67,6 +68,23 @@ public class Main {
         }
     }
 
+    enum BallsColor {
+        RED, GREEN, BLUE, YELLOW, ORANGE
+    }
+
+
+    enum Status {
+        RECEIVED, PROCESSING, CHECKING, DISPATCHED, PAYMENT_COLLECTION
+    }
+
+    enum Sections {
+        DAISY, LOTUS, TULIP, ROSE
+    }
+
+    enum Fonts {
+        BOLD, LARGE, MEDIUM, SMALL, ITALIC, NORMAL
+    }  
+
     public static void main(String[] args) throws Exception { 
         String[] words = {"this", " ", "is", " ", "it"};
         CharArrayWriter writer = new CharArrayWriter();
@@ -108,6 +126,29 @@ public class Main {
 
         controller.setCommand(lighsOff);
         controller.executeCommand();
+
+        EnumSet<BallsColor> colors = EnumSet.of(BallsColor.GREEN, BallsColor.ORANGE);
+        System.out.println(colors);
+
+        EnumSet<BallsColor> allColors = EnumSet.allOf(BallsColor.class);
+        System.out.println(allColors);
+
+        EnumSet<BallsColor> emptyEnum = EnumSet.noneOf(BallsColor.class);
+        System.out.println(emptyEnum);
+        
+        EnumSet<Status> statuses = EnumSet.range(Status.RECEIVED, Status.DISPATCHED);
+        statuses.remove(Status.CHECKING); // true
+        statuses.remove(Status.DISPATCHED); // true
+        
+        statuses.add(Status.CHECKING); 
+        
+        // Notice how Checking Enum is placed at the correct position 
+        // as in Status class in spite of adding it afterwards
+        System.out.println(statuses); // [RECEIVED, PROCESSING, CHECKING]
+        statuses.contains(Status.PROCESSING); // true
+
+        EnumSet<Fonts> enumSet = EnumSet.range(Fonts.SMALL, Fonts.ITALIC);
+        System.out.println(enumSet);
     }
 
     
