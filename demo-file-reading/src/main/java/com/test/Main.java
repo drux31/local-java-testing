@@ -1,56 +1,22 @@
 package com.test;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.CharArrayWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
 import java.io.OutputStream;
-import java.io.Reader;
-import java.lang.reflect.Array;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
 
-import org.sqlite.SQLiteDataSource;
-
-import com.commons.A;
-import com.commons.BlackBox;
 import com.commons.Command;
 import com.commons.Light;
 import com.commons.LightOffCommand;
 import com.commons.LightOnCommand;
-import com.commons.ListOperations;
-import com.commons.MessageNotifier;
-import com.commons.NumbersThread;
-import com.commons.SquareWorkerThread;
-import com.commons.Students;
+
 import com.config.Controller;
-import com.config.CoolJDBC;
-import com.commons.MyThread;
-import com.core.SomeClass;
-import com.templatePatern.Programmer;
-import com.templatePatern.Worker;
-import com.testfiles.BubbleSort;
-import com.testfiles.ListToLinkedList;
-import com.testfiles.Person;
 
 
 public class Main {
